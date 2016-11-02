@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzh.record.mapper.WebUserMapper">
+    <resultMap id="BaseResultMap" type="com.lzh.record.model.entity.WebUser">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="password_salt" property="passwordSalt" jdbcType="VARCHAR"/>
+        <result column="nickname" property="nickname" jdbcType="VARCHAR"/>
+        <result column="enable" property="enable" jdbcType="BIT"/>
+        <result column="token" property="token" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, create_time, update_time, username, password, password_salt, nickname, enable, token
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+        where username = #{username}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from web_user
+    where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.lzh.record.model.entity.WebUser">
+        insert into web_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="passwordSalt != null">
+                password_salt,
+            </if>
+            <if test="nickname != null">
+                nickname,
+            </if>
+            <if test="enable != null">
+                enable,
+            </if>
+            <if test="token != null">
+                token,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="passwordSalt != null">
+                #{passwordSalt,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="enable != null">
+                #{enable,jdbcType=BIT},
+            </if>
+            <if test="token != null">
+                #{token,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.lzh.record.model.entity.WebUser">
+        update web_user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="passwordSalt != null">
+                password_salt = #{passwordSalt,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                nickname = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="enable != null">
+                enable = #{enable,jdbcType=BIT},
+            </if>
+            <if test="token != null">
+                token = #{token,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectByWebUser" resultMap="BaseResultMap" parameterType="com.lzh.record.model.entity.WebUser">
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+        <where>
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER}
+            </if>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR}
+            </if>
+            <if test="nickname != null">
+                nickname = #{nickname,jdbcType=VARCHAR}
+            </if>
+            <if test="token != null">
+                token = #{token,jdbcType=VARCHAR}
+            </if>
+        </where>
+    </select>
+
+    <select id="testDigitalPage" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+        where
+        username = #{param.username} AND password = #{param.password}
+    </select>
+
+    <select id="testDigitalPage2" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+    </select>
+
+    <select id="testDropDownPage" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+        where
+        username = #{param.username} AND password = #{param.password}
+    </select>
+
+    <select id="testDropDownPage2" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List"/>
+        from web_user
+    </select>
+
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/record-common/record-common.iml" filepath="$PROJECT_DIR$/record-common/record-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/record-dao/record-dao.iml" filepath="$PROJECT_DIR$/record-dao/record-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/record-model/record-model.iml" filepath="$PROJECT_DIR$/record-model/record-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/record-service/record-service.iml" filepath="$PROJECT_DIR$/record-service/record-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/record-web/record-web.iml" filepath="$PROJECT_DIR$/record-web/record-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rerord-money.iml" filepath="$PROJECT_DIR$/rerord-money.iml" />
+    </modules>
+  </component>
+</project>

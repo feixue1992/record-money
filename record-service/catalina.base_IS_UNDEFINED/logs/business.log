@@ -1,0 +1,37 @@
+2016-11-02 14:44:31.913 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2016-11-02 14:44:32.130 DEBUG c.l.r.m.W.selectByPrimaryKey - ==>  Preparing: select id, create_time, update_time, username, password, password_salt, nickname, enable, token from web_user where id = ? 
+2016-11-02 14:44:32.148 DEBUG c.l.r.m.W.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2016-11-02 14:44:32.165 DEBUG c.l.r.m.W.selectByPrimaryKey - <==      Total: 1
+2016-11-02 14:44:32.174 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2016-11-02 14:53:22.901 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2016-11-02 14:53:23.126 DEBUG c.l.r.m.W.insertSelective - ==>  Preparing: insert into web_user ( username, password, password_salt, nickname ) values ( ?, ?, ?, ? ) 
+2016-11-02 14:53:23.146 DEBUG c.l.r.m.W.insertSelective - ==> Parameters: lzh(String), 123456(String), lizhenhui(String), xhh(String)
+2016-11-02 14:53:23.148 DEBUG c.l.r.m.W.insertSelective - <==    Updates: 1
+2016-11-02 14:53:23.210 DEBUG c.l.r.m.W.selectByPrimaryKey - ==>  Preparing: select id, create_time, update_time, username, password, password_salt, nickname, enable, token from web_user where id = ? 
+2016-11-02 14:53:23.212 DEBUG c.l.r.m.W.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2016-11-02 14:53:23.231 DEBUG c.l.r.m.W.selectByPrimaryKey - <==      Total: 1
+2016-11-02 14:53:23.250 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2016-11-02 14:55:07.399 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2016-11-02 14:55:07.629 DEBUG c.l.r.m.W.insertSelective - ==>  Preparing: insert into web_user ( username, password, password_salt, nickname ) values ( ?, ?, ?, ? ) 
+2016-11-02 14:55:07.649 DEBUG c.l.r.m.W.insertSelective - ==> Parameters: lzh(String), 123456(String), lizhenhui(String), xhh(String)
+2016-11-02 14:55:07.651 DEBUG c.l.r.m.W.insertSelective - <==    Updates: 1
+2016-11-02 14:55:07.680 DEBUG c.l.r.m.W.selectByPrimaryKey - ==>  Preparing: select id, create_time, update_time, username, password, password_salt, nickname, enable, token from web_user where id = ? 
+2016-11-02 14:55:07.680 DEBUG c.l.r.m.W.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2016-11-02 14:55:07.693 DEBUG c.l.r.m.W.selectByPrimaryKey - <==      Total: 1
+2016-11-02 14:55:07.708 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2016-11-02 14:57:00.195 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2016-11-02 14:57:00.409 DEBUG c.l.r.m.W.insertSelective - ==>  Preparing: insert into web_user ( username, password, password_salt, nickname ) values ( ?, ?, ?, ? ) 
+2016-11-02 14:57:00.428 DEBUG c.l.r.m.W.insertSelective - ==> Parameters: lzh(String), 123456(String), lizhenhui(String), xhh(String)
+2016-11-02 14:57:00.430 DEBUG c.l.r.m.W.insertSelective - <==    Updates: 1
+2016-11-02 14:57:00.490 DEBUG c.l.r.m.W.selectByPrimaryKey - ==>  Preparing: select id, create_time, update_time, username, password, password_salt, nickname, enable, token from web_user where id = ? 
+2016-11-02 14:57:00.491 DEBUG c.l.r.m.W.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2016-11-02 14:57:00.502 DEBUG c.l.r.m.W.selectByPrimaryKey - <==      Total: 1
+2016-11-02 14:57:00.518 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2016-11-02 15:03:50.986 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2016-11-02 15:03:51.204 DEBUG c.l.r.m.W.insertSelective - ==>  Preparing: insert into web_user ( username, password, password_salt, nickname ) values ( ?, ?, ?, ? ) 
+2016-11-02 15:03:51.222 DEBUG c.l.r.m.W.insertSelective - ==> Parameters: lzh(String), 123456(String), lizhenhui(String), xhh(String)
+2016-11-02 15:03:51.224 DEBUG c.l.r.m.W.insertSelective - <==    Updates: 1
+2016-11-02 15:03:51.255 DEBUG c.l.r.m.W.selectByPrimaryKey - ==>  Preparing: select id, create_time, update_time, username, password, password_salt, nickname, enable, token from web_user where id = ? 
+2016-11-02 15:03:51.255 DEBUG c.l.r.m.W.selectByPrimaryKey - ==> Parameters: 1(Integer)
+2016-11-02 15:03:51.271 DEBUG c.l.r.m.W.selectByPrimaryKey - <==      Total: 1
+2016-11-02 15:03:51.279 INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
