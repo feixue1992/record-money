@@ -1,0 +1,17 @@
+#idea忽略
+.idea/
+target/
+upload/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+
+# mybatis generator
+!record-dao/src/main/resources/mysql-connector-java-5.1.34.jar
+record-dao/src/main/resources/mybatis-generator-config.properties
+record-dao/src/main/resources/generator-config.xml
+
