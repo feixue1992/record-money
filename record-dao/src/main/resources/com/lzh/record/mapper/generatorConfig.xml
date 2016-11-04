@@ -1,0 +1,53 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 引入数据库驱动链接包 -->
+    <classPathEntry
+            location="D:\\apache-maven-3.3.9\\repository\\mysql\\mysql-connector-java\\5.1.20\\mysql-connector-java-5.1.24.jar"/>
+
+    <context id="super_top_shard" targetRuntime="Ibatis2Java5" defaultModelType="flat">
+        <!-- 保留字添加单引号 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 用于去掉烦人的注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <!-- 数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://115.231.103.214:3306/new_express?useUnicode=true"
+                        userId="superboss" password="guanghua">
+        </jdbcConnection>
+        <!-- 生成实体类 指定包名 以及生成的地址 （可以自定义地址，但是路径不存在不会自动创建  使用Maven生成在target目录下，会自动创建） -->
+        <javaModelGenerator targetPackage="com.raycloud.express.ts.model"
+                            targetProject="D:\\workspace\\quicloud-express-ts\\ts\\src\\main\\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成SQLMAP文件 -->
+        <sqlMapGenerator targetPackage="ibatis/sqlmap"
+                         targetProject="D:\\workspace\\quicloud-express-ts\\ts\\src\\main\\resources">
+            <property name="enableSubPackages" value="true"/>
+            <property name="autoDelimitKeywords" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成Dao文件 可以配置 type="XMLMAPPER"生成xml的dao实现  context id="DB2Tables" 修改targetRuntime="MyBatis3"  -->
+        <javaClientGenerator type="SPRING"
+                             targetPackage="com.raycloud.express.ts.dao"
+                             targetProject="D:\\workspace\\quicloud-express-ts\\ts\\src\\main\\java"
+                             implementationPackage="com.raycloud.express.ts.dao.impl">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等 -->
+        <!-- <table>标签里指定要生成的相关数据表，如果有多个表的话，需要配置多个<table> -->
+        <table tableName="temp_search_score" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+
+    </context>
+</generatorConfiguration>
