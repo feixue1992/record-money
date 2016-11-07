@@ -8,10 +8,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
 	<!-- ①：对web包中的所有类进行扫描，以完成Bean创建和自动依赖注入的功能 -->
-	 <context:component-scan base-package="com.lzh.record" use-default-filters="false">
-			<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-			<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
-	</context:component-scan>
+	 <context:component-scan base-package="com.lzh.record"/>
 	
 	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
 			<mvc:message-converters register-defaults="true">
@@ -31,7 +28,7 @@
 
 	<!-- ：对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/"/>
+		<property name="prefix" value="/jsp/"/>
 		<property name="suffix" value=".jsp"/>
 	 	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 	</bean>
@@ -46,16 +43,5 @@
 	        </value>
 	    </property>
 	</bean> 
-	
-	 <!-- 文件上传限制大小 -->
-     <bean id="multipartResolver"  
-           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
-           <!-- set the max upload size 10MB -->  
-           <property name="maxUploadSize">  
-               <value>10485760</value>  
-           </property>  
-           <property name="maxInMemorySize">  
-               <value>4096</value>  
-           </property>  
-     </bean>
+
 </beans>

@@ -16,33 +16,14 @@
 
 package com.lzh.record.common.web;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import java.util.Enumeration;
 
-/**
- * 用于将制定的属性值,从spring中填充到servletContext
- *
- * @author zhL
- * @since 1.0.0
- *
- * @see ConfigurerPropertiesHolder
- */
+
 public class ServletContextPropertiesLoaderListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        ServletContext servletContext = servletContextEvent.getServletContext();
-        Enumeration<String> propertyNames = ConfigurerPropertiesHolder.getPropertyNames();
-        if (propertyNames == null) {
-            return;
-        }
-        while (propertyNames.hasMoreElements()) {
-            String propertyName = propertyNames.nextElement();
-            if (servletContext.getAttribute(propertyName) == null) {
-                servletContext.setAttribute(propertyName, ConfigurerPropertiesHolder.getProperty(propertyName));
-            }
-        }
+
     }
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {}

@@ -6,10 +6,10 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
 	   default-lazy-init="true">
 
-	<context:component-scan base-package="com.lzh.record">
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
-	</context:component-scan>
+	<import resource="application-context-dao.xml"/>
+	<import resource="application-context-service.xml"/>
+	<import resource="application-context-transaction.xml"/>
+	<context:component-scan base-package="com.lzh.record"/>
 	
 	<!-- 配置文件加载 -->
 	<bean id="propertyConfigurer"

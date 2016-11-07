@@ -79,6 +79,12 @@
           </dependency>
 
           <dependency>
+              <groupId>jstl</groupId>
+              <artifactId>jstl</artifactId>
+              <version>${jstl.version}</version>
+          </dependency>
+
+          <dependency>
               <groupId>junit</groupId>
               <artifactId>junit</artifactId>
               <version>${junit.version}</version>
@@ -93,13 +99,21 @@
         <finalName>record-money</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.1</version>
                 <configuration>
-                    <path>/</path>
-                    <port>8080</port>
-                    <uriEncoding>UTF-8</uriEncoding>
-                    <contextReloadable>true</contextReloadable>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>

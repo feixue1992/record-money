@@ -19,6 +19,8 @@ package com.lzh.record.service;
 
 import com.lzh.record.model.entity.WebUser;
 
+import java.util.List;
+
 /**
  * @author zhL
  * @since 1.0.0
@@ -36,5 +38,7 @@ public interface WebUserService {
     int updateByPrimaryKeySelective(WebUser record);
 
     WebUser selectByUsername(String username);
+
+    List<WebUser> selectUserList(WebUser webUser);
 
 }

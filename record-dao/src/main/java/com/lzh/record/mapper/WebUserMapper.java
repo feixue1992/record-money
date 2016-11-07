@@ -2,6 +2,8 @@ package com.lzh.record.mapper;
 
 import com.lzh.record.model.entity.WebUser;
 
+import java.util.List;
+
 public interface WebUserMapper {
 
     int deleteByPrimaryKey(Integer id);
@@ -15,5 +17,7 @@ public interface WebUserMapper {
     int updateByPrimaryKeySelective(WebUser record);
 
     WebUser selectByUsername(String username);
+
+    List<WebUser> selectUserList(WebUser user);
 
 }

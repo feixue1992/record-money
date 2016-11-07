@@ -13,17 +13,22 @@
           <element id="archive" name="record-dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="record-dao" />
           </element>
+          <element id="archive" name="record-common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="record-common" />
+          </element>
           <element id="archive" name="record-model-1.0-SNAPSHOT.jar">
             <element id="module-output" name="record-model" />
           </element>
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.2.1" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.2.7" />
+          <element id="library" level="project" name="Maven: org.mybatis.generator:mybatis-generator-core:1.3.5" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.2.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.24" />
           <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.20" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.7.3" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.7.3" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.12.2" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.7" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.7" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.20" />
@@ -36,7 +41,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.3.2.RELEASE" />
-          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.12.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

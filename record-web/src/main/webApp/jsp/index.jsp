@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -11,6 +12,12 @@
     <title>Hello java</title>
   </head>
   <body>
-  $END$
+    <table>
+      <c:forEach items="users" var="user">
+        <tr>
+          <td>姓名</td><td>${user.username}</td>
+        </tr>
+      </c:forEach>
+    </table>
   </body>
 </html>

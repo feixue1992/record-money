@@ -30,12 +30,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="record-common" target="1.5" />
-      <module name="record-dao" target="1.5" />
-      <module name="record-model" target="1.5" />
-      <module name="record-service" target="1.5" />
-      <module name="record-web" target="1.5" />
-      <module name="rerord-money" target="1.5" />
+      <module name="record-common" target="8" />
+      <module name="record-dao" target="8" />
+      <module name="record-model" target="8" />
+      <module name="record-service" target="8" />
+      <module name="record-web" target="8" />
+      <module name="rerord-money" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

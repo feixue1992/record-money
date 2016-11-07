@@ -21,6 +21,9 @@ import com.lzh.record.service.WebUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author zhL
  * @since 1.0.0
@@ -54,5 +57,10 @@ public class WebUserServiceImpl implements WebUserService {
 
     public WebUser selectByUsername(String username) {
         return webUserMapper.selectByUsername(username);
+    }
+
+    @Override
+    public List<WebUser> selectUserList(WebUser user) {
+        return webUserMapper.selectUserList(user);
     }
 }
