@@ -24,6 +24,7 @@
         <servlet.version>3.0</servlet.version>
         <spring.version>4.3.2.RELEASE</spring.version>
         <record.version>1.0-SNAPSHOT</record.version>
+        <jstl.version>1.2</jstl.version>
   </properties>
 
   <dependencyManagement>
@@ -62,7 +63,13 @@
           <dependency>
               <groupId>org.springframework</groupId>
               <artifactId>spring-webmvc</artifactId>
-              <version>4.3.2.RELEASE</version>
+              <version>${spring.version}</version>
+          </dependency>
+
+          <dependency>
+              <groupId>javax.servlet</groupId>
+              <artifactId>jstl</artifactId>
+              <version>${jstl.version}</version>
           </dependency>
 
           <dependency>
