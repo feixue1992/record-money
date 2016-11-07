@@ -19,9 +19,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>4.10</junit.version>
+        <junit.version>4.12</junit.version>
         <lombok.version>1.12.2</lombok.version>
-        <servlet.version>3.0</servlet.version>
         <spring.version>4.3.2.RELEASE</spring.version>
         <record.version>1.0-SNAPSHOT</record.version>
         <jstl.version>1.2</jstl.version>
@@ -56,8 +55,9 @@
           </dependency>
           <dependency>
               <groupId>javax.servlet</groupId>
-              <artifactId>servlet-api</artifactId>
-              <version>${servlet.version}</version>
+              <artifactId>javax.servlet-api</artifactId>
+              <version>3.1.0</version>
+              <scope>provided</scope>
           </dependency>
 
           <dependency>
@@ -73,6 +73,12 @@
           </dependency>
 
           <dependency>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+          </dependency>
+
+          <dependency>
               <groupId>junit</groupId>
               <artifactId>junit</artifactId>
               <version>${junit.version}</version>
@@ -82,13 +88,6 @@
 
   </dependencyManagement>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${lombok.version}</version>
-    </dependency>
-  </dependencies>
 
     <build>
         <finalName>record-money</finalName>

@@ -21,6 +21,10 @@
     <dependencies>
         <dependency>
             <groupId>com.lzh.record</groupId>
+            <artifactId>record-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lzh.record</groupId>
             <artifactId>record-model</artifactId>
         </dependency>
         <dependency>
