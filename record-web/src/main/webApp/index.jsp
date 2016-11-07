@@ -11,6 +11,7 @@
     <title>Hello java</title>
   </head>
   <body>
+  ${pageContext.request.contextPath}
   $END$
   </body>
 </html>
