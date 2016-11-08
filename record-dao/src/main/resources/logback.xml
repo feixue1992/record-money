@@ -76,7 +76,7 @@
 
 
 	<!-- 需要打印SQL时，修改下面的INFO为DEBUG -->
-	<root level="DEBUG"> <!-- 正式环境使用INFO,测试时改为 DEBUG -->
+	<root level="INFO"> <!-- 正式环境使用INFO,测试时改为 DEBUG -->
 		<appender-ref ref="console" />
         <appender-ref ref="businessLogFile" />
         <appender-ref ref="errorlogFile" />
