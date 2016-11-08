@@ -24,6 +24,7 @@
         <spring.version>4.3.2.RELEASE</spring.version>
         <record.version>1.0-SNAPSHOT</record.version>
         <jstl.version>1.2</jstl.version>
+        <spy.version>3.0.0</spy.version>
   </properties>
 
   <dependencyManagement>
@@ -82,6 +83,12 @@
               <groupId>jstl</groupId>
               <artifactId>jstl</artifactId>
               <version>${jstl.version}</version>
+          </dependency>
+
+          <dependency>
+              <groupId>p6spy</groupId>
+              <artifactId>p6spy</artifactId>
+              <version>${spy.version}</version>
           </dependency>
 
           <dependency>

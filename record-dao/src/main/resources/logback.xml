@@ -82,5 +82,9 @@
         <appender-ref ref="errorlogFile" />
 	</root>
 
+    <category name="p6spy">
+        <priority value="INFO" />
+    </category>
+
 
 </configuration>
