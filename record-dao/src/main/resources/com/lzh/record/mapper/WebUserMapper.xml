@@ -22,6 +22,20 @@
         where id = #{id,jdbcType=INTEGER}
     </select>
 
+    <select id="selectUserList" resultMap="BaseResultMap" resultType="map">
+        select
+        <include refid="Base_Column_List"/>
+                from web_user
+        <where>
+            <if test = "username != null and username != ''">
+                and web_user.username = #{username}
+            </if>
+            <if test = "nickname != null and nickname != ''">
+                and web_user.nickname = #{nickname}
+            </if>
+        </where>
+    </select>
+
     <select id="selectByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
         <include refid="Base_Column_List"/>
