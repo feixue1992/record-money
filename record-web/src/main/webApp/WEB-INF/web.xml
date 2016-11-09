@@ -4,21 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:/applicationContext.xml</param-value>
-    </context-param>
-
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>com.lzh.record.common.web.ServletContextPropertiesLoaderListener</listener-class>
-    </listener>
-
     <!--设置编码-->
     <filter>
         <filter-name>encoding</filter-name>
@@ -37,6 +22,21 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:/applicationContext.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.lzh.record.common.web.ServletContextPropertiesLoaderListener</listener-class>
+    </listener>
+
     <!--springmvc配置-->
     <servlet>
         <servlet-name>springmvc</servlet-name>
@@ -45,11 +45,26 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:/spring-mvc.xml</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    
+    <!-- 出错页面定义 -->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/jsp/common/500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/jsp/common/500.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/jsp/common/404.jsp</location>
+    </error-page>
+
+
 </web-app>

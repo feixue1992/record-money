@@ -49,8 +49,8 @@
           });
         },
         url : {
-            add : "/front/user/add",
-            update : "/front/user/update"
+            add : contextPath + "/front/user/add",
+            update : contextPath + "/front/user/update"
         },
         method : {
             add : function() {

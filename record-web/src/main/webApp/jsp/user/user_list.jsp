@@ -38,8 +38,8 @@
             <td>${user.nickname}</td>
             <td><fmt:formatDate value = "${user.createTime}" pattern="yyyy-MM-dd HH:mm:ss" type = "both"></fmt:formatDate></td>
             <td><fmt:formatDate value = "${user.updateTime}" pattern="yyyy-MM-dd HH:mm:ss" type = "both"></fmt:formatDate></td>
-            <td><a href = "/front/to/user/update/${user.id}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href = "/front/user/delete/${user.id}">删除</a>
+            <td><a href = "${pageContext.request.contextPath}/front/to/user/update/${user.id}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href = "${pageContext.request.contextPath}/front/user/delete/${user.id}">删除</a>
             </td>
         </tr>
     </c:forEach>

@@ -22,9 +22,7 @@ import javax.servlet.ServletContextListener;
 
 public class ServletContextPropertiesLoaderListener implements ServletContextListener {
 
-    public void contextInitialized(ServletContextEvent servletContextEvent) {
-
-    }
+    public void contextInitialized(ServletContextEvent servletContextEvent) {}
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {}
 

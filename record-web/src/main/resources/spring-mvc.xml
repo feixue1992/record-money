@@ -26,6 +26,9 @@
 	<!-- <mvc:resources mapping="/static/**" location="/static/"/> -->
 	 <mvc:default-servlet-handler />
 
+    <!--统一异常处理-->
+    <bean id = "exceptionHandler" class = "com.lzh.record.common.exception.MyExceptionHandler"/>
+
 	<!-- ：对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/jsp/"/>
@@ -42,6 +45,6 @@
 	            xml=application/xml
 	        </value>
 	    </property>
-	</bean> 
+	</bean>
 
 </beans>
