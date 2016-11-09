@@ -40,6 +40,7 @@ public class WebUserServiceImpl implements WebUserService {
     }
 
     public int insertSelective(WebUser record) {
+        record.setPasswordSalt("lzh");
         return webUserMapper.insertSelective(record);
     }
 
