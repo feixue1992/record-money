@@ -35,7 +35,6 @@ public class UserController {
      */
     @RequestMapping("/front/user/list")
     public String getUserList(HttpServletRequest request, WebUser user) {
-        webUserService = null;
         List<WebUser> users = webUserService.selectUserList(user);
         request.setAttribute("users", users);
         return "/user/user_list";
