@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzh.record.mapper.UserBalanceMapper">
+    <resultMap id="BaseResultMap" type="com.lzh.record.model.entity.UserBalance">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="balance" property="balance" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="base_column_list">
+        id, create_time, update_time, content, balance
+  </sql>
+    <select id="getBalanceList" resultMap="BaseResultMap">
+        select
+        <include refid="base_column_list"/>
+        from balance_record
+    </select>
+
+    <!--更新账户-->
+    <update id = "updateBalance" parameterType="UserBalance">
+        update
+        balance_record
+        set balance_record.balane = balance_record.balane + ${balance},
+            balane.content = #{content}
+        where
+           balance_record.balane.id = #{id}
+    </update>
+
+</mapper>

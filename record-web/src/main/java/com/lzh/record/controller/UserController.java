@@ -85,6 +85,11 @@ public class UserController {
         return "/user/user_add";
     }
 
+    /**
+     * 增加用户
+     * @param user
+     * @return
+     */
     @RequestMapping("/front/user/add")
     public String addUser(@ModelAttribute("user") WebUser user) {
         webUserService.insertSelective(user);

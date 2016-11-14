@@ -15,6 +15,7 @@
  */
 
 package com.lzh.record.service.impl;
+
 import com.lzh.record.mapper.WebUserMapper;
 import com.lzh.record.model.entity.WebUser;
 import com.lzh.record.service.WebUserService;
@@ -22,7 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author zhL
