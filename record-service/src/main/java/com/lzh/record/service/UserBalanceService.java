@@ -11,4 +11,6 @@ public interface UserBalanceService {
         List<UserBalance> getBalanceList();
 
         void updateBalance(UserBalance userBalance);
+
+        void addBalanceRecord(UserBalance userBalance);
 }

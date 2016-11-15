@@ -2,27 +2,24 @@
 <%@ include file ="../common/default.jsp"%>
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
+  balance: Administrator
   Date: 2016/11/2
   Time: 10:32
   To change this template use File | Settings | File Templates.
 --%>
 <html>
 <head>
-    <title>增加用户</title>
+    <title>增加记录</title>
 </head>
 <body>
 <table cellpadding="1">
     <form id = "fm" method = "post">
-        <input type = "hidden" name = "user.id" value = "${user.id}"/>
+        <input type = "hidden" name = "balance.id" value = "${balance.id}"/>
              <tr>
-                <td>姓名</td><td><input type = "text" name = "user.username"></td>
+                <td>内容</td><td><input type = "text" name = "balance.content" id = "content"></td>
             </tr>
             <tr>
-                <td>昵称</td><td><input type = "text" name = "user.nickname"></td>
-            </tr>
-            <tr>
-                <td>密码</td><td><input type = "password" name = "user.password"></td>
+                <td>资金</td><td><input type = "text" name = "balance.balance" id = "balance"></td>
             </tr>
     </form>
     <tr>
@@ -31,34 +28,40 @@
     </tr>
 </table>
 <script>
-    var user = {
+    var balance = {
         init : function() {
           $('#submit').bind('click', function() {
-              user.method.add();
+              balance.method.add();
           });
           $('#clear').bind('click', function() {
-              user.method.clear();
+              balance.method.clear();
           });
         },
         url : {
-            add : contextPath + "/front/user/add",
-            update : contextPath + "/front/user/update"
+            add : contextPath + "/front/balance/add",
+            update : contextPath + "/front/balance/update"
         },
         method : {
             add : function() {
-                $("#fm").attr("action", user.url.add);
+                $("#fm").attr("action", balance.url.add);
+                var money = $('#balance').val();
+                var reg = /^([1-9]\d{0,9}|0)([.]?|(\.\d{1,2})?)$/;
+                if (reg.test(money) == false) {
+                    alert("请输入正确的金额");
+                    return;
+                }
                 $("#fm").submit();
             },
             clear : function() {
-                $("#nickname").val('');
-                $('#password').val('');
+                $("#content").val('');
+                $('#balance').val('');
             }
         }
     }
 
     $(function() {
-        user.init();
-    })
+        balance.init();
+    });
 </script>
 </body>
 </html>

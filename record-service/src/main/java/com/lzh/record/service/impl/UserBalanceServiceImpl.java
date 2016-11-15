@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/14.
  */
-@Service("userBalance")
+@Service("userBalanceService")
 public class UserBalanceServiceImpl implements UserBalanceService{
 
     @Autowired
@@ -25,5 +25,10 @@ public class UserBalanceServiceImpl implements UserBalanceService{
     @Override
     public void updateBalance(UserBalance userBalance) {
         userBalanceMapper.updateBalance();
+    }
+
+    @Override
+    public void addBalanceRecord(UserBalance userBalance) {
+        userBalanceMapper.addBalanceRecord(userBalance);
     }
 }

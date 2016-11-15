@@ -9,18 +9,10 @@
 --%>
 <html>
 <head>
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <title>修改用户</title>
 </head>
 <body>
-`<table cellpadding="1">
+<table cellpadding="1">
     <form id = "fm" method = "post">
         <input type = "hidden" name = "user.id" value = "${user.id}"/>
             <tr>
@@ -31,10 +23,10 @@
             </tr>
     </form>
     <tr>
-        <td><button id = "submit">提交</button></td>
-        <td><button id = "clear">重置</button></td>
+        <td><a href = "javascript:void(0)" id = "submit">提交</a></td>
+        <td><a href = "javascript:void(0)" id = "clear">重置</a></td>
     </tr>
-`</table>
+</table>
 <script>
     var user = {
         init : function() {

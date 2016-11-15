@@ -10,7 +10,14 @@
     </resultMap>
     <sql id="base_column_list">
         id, create_time, update_time, content, balance
-  </sql>
+    </sql>
+    <sql id = "base_property_list">
+        #{id},
+        #{createTime},
+        #{updateTime},
+        #{content},
+        #{balance}
+    </sql>
     <select id="getBalanceList" resultMap="BaseResultMap">
         select
         <include refid="base_column_list"/>
@@ -26,5 +33,14 @@
         where
            balance_record.balane.id = #{id}
     </update>
+
+    <insert id = "addBalanceRecord" parameterType="UserBalance" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT
+        into balance_record(
+        <include refid = "base_column_list"/>)
+        values (
+        <include refid = "base_property_list"/>
+        )
+    </insert>
 
 </mapper>

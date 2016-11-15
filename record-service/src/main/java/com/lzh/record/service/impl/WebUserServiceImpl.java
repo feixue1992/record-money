@@ -64,4 +64,6 @@ public class WebUserServiceImpl implements WebUserService {
     public List<WebUser> selectUserList(WebUser user) {
         return webUserMapper.selectUserList(user);
     }
+
+
 }

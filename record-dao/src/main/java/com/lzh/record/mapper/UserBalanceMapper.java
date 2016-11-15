@@ -13,4 +13,6 @@ public interface UserBalanceMapper {
 
     void updateBalance();
 
+    void addBalanceRecord(UserBalance userBalance);
+
 }
