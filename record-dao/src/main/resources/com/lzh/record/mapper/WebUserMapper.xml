@@ -47,6 +47,7 @@
     delete from web_user
     where id = #{id,jdbcType=INTEGER}
     </delete>
+
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.lzh.record.model.entity.WebUser">
         insert into web_user
         <trim prefix="(" suffix=")" suffixOverrides=",">

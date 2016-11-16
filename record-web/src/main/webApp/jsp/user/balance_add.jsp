@@ -16,6 +16,14 @@
     <form id = "fm" method = "post">
         <input type = "hidden" name = "balance.id" value = "${balance.id}"/>
              <tr>
+                <td>内容</td>
+                 <td><select name = "balance.type">
+                        <option value = "0">消费</option>
+                        <option value = "1">充值</option>
+                    </select>
+                </td>
+             </tr>
+             <tr>
                 <td>内容</td><td><input type = "text" name = "balance.content" id = "content"></td>
             </tr>
             <tr>

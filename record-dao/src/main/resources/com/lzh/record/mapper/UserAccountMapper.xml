@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lzh.record.mapper.UserAccountMapper">
+    <resultMap id="BaseResultMap" type="com.lzh.record.model.entity.UserAccount">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="user_id" property="userId"/>
+        <result column="balance" property="balance"/>
+        <result column="enable" property="enable"/>
+    </resultMap>
+    <sql id="base_column_list">
+        id, create_time, update_time, user_id, balance, enable
+    </sql>
+    <sql id = "base_property_list">
+        #{id},
+        #{createTime},
+        #{updateTime},
+        #{userId},
+        #{balance},
+        #{enable}
+    </sql>
+    <select id="getAccountList" resultMap="BaseResultMap">
+        select
+        <include refid="base_column_list"/>
+        from user_account
+    </select>
+
+    <!--更新账户-->
+    <update id = "updateAccountById">
+        update
+        user_account
+        set user_account.balane = user_account.balane + #{balance}
+        where
+           user_account.id = #{id}
+    </update>
+
+    <insert id = "addUserAccount" parameterType="UserAccount" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert
+        into user_account(
+        user_account.user_id,
+        user_account.balance,
+        user_account.enable)
+        values (
+        #{userId}, #{balance}, #{enable}
+        )
+    </insert>
+
+
+</mapper>

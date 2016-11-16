@@ -6,6 +6,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
 	   default-lazy-init="true">
 
+	<!-- Annotation Config -->
+	<context:annotation-config />
 	<import resource="application-context-dao.xml"/>
 	<import resource="application-context-service.xml"/>
 	<import resource="application-context-transaction.xml"/>

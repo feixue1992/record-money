@@ -8,8 +8,8 @@ import java.math.BigDecimal;
  * Created by Administrator on 2016/11/14.
  */
 @Data
-public class UserBalance extends BaseModel{
+public class UserAccount extends BaseModel{
     private BigDecimal balance;
-    private String content;
-    private int type;
+    private int userId;
+    private int enable;
 }

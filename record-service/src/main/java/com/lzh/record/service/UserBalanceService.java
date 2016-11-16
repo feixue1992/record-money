@@ -13,4 +13,5 @@ public interface UserBalanceService {
         void updateBalance(UserBalance userBalance);
 
         void addBalanceRecord(UserBalance userBalance);
+
 }

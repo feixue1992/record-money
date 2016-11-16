@@ -17,11 +17,14 @@
 package com.lzh.record.service.impl;
 
 import com.lzh.record.mapper.WebUserMapper;
+import com.lzh.record.model.entity.UserAccount;
 import com.lzh.record.model.entity.WebUser;
+import com.lzh.record.service.UserAccountService;
 import com.lzh.record.service.WebUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -34,6 +37,8 @@ public class WebUserServiceImpl implements WebUserService {
 
     @Autowired
     private WebUserMapper webUserMapper;
+    @Autowired
+    private UserAccountService userAccountService;
 
     public int deleteByPrimaryKey(Integer id) {
         return webUserMapper.deleteByPrimaryKey(id);
@@ -41,7 +46,14 @@ public class WebUserServiceImpl implements WebUserService {
 
     public int insertSelective(WebUser record) {
         record.setPasswordSalt("lzh");
-        return webUserMapper.insertSelective(record);
+        int flag =  webUserMapper.insertSelective(record);
+        if (flag == 1) {
+            UserAccount userAccount = new UserAccount();
+            userAccount.setUserId(record.getId());
+            userAccount.setBalance(new BigDecimal("0"));
+            userAccountService.addUserAccount(userAccount);
+        }
+        return flag;
     }
 
     public WebUser selectByPrimaryKey(Integer id) {

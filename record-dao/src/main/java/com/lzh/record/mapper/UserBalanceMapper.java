@@ -11,8 +11,9 @@ public interface UserBalanceMapper {
 
     List<UserBalance> getBalanceList();
 
-    void updateBalance();
+    void updateBalance(UserBalance userBalance);
 
     void addBalanceRecord(UserBalance userBalance);
+
 
 }
