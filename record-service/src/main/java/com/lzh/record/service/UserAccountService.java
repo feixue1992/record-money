@@ -15,4 +15,6 @@ public interface UserAccountService {
         void updateAccountById(@Param("balance") BigDecimal balance, @Param("id") int id);
 
         void addUserAccount(UserAccount userAccount);
+
+        UserAccount getAccountByUserId(int userId);
 }

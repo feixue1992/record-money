@@ -26,11 +26,19 @@
         from user_account
     </select>
 
+    <!--通过用户Id查找账户信息-->
+    <select id = "getAccountByUserId" resultMap="BaseResultMap">
+        select
+        <include refid="base_column_list"/>
+        from user_account
+        where user_account.user_id = #{userId}
+    </select>
+
     <!--更新账户-->
     <update id = "updateAccountById">
         update
         user_account
-        set user_account.balane = user_account.balane + #{balance}
+        set user_account.balance = user_account.balance + #{balance}
         where
            user_account.id = #{id}
     </update>

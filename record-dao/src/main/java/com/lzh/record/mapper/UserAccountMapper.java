@@ -17,5 +17,6 @@ public interface UserAccountMapper {
 
     void addUserAccount(UserAccount userAccount);
 
+    UserAccount getAccountByUserId(int userId);
 
 }

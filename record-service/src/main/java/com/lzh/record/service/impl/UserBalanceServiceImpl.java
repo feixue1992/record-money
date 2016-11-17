@@ -33,11 +33,12 @@ public class UserBalanceServiceImpl implements UserBalanceService{
 
     @Override
     public void addBalanceRecord(UserBalance userBalance) {
+        userBalance.setAccountId(1);
         userBalanceMapper.addBalanceRecord(userBalance);
         if (userBalance.getType() == 0) {
-            userAccountService.updateAccountById(userBalance.getBalance().negate(), userBalance.getId());
+            userAccountService.updateAccountById(userBalance.getBalance().negate(), 1);
         } else {
-            userAccountService.updateAccountById(userBalance.getBalance(), userBalance.getId());
+            userAccountService.updateAccountById(userBalance.getBalance(), 1);
         }
     }
 }

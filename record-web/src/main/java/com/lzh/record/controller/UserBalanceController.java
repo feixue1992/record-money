@@ -1,14 +1,14 @@
 package com.lzh.record.controller;
 
+import com.lzh.record.model.entity.UserAccount;
 import com.lzh.record.model.entity.UserBalance;
+import com.lzh.record.service.UserAccountService;
 import com.lzh.record.service.UserBalanceService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +22,8 @@ public class UserBalanceController {
 
     @Autowired
     private UserBalanceService userBalanceService;
+    @Autowired
+    private UserAccountService userAccountService;
 
     @InitBinder("balance")
     private void initBalanceBinder(WebDataBinder webDataBinder) {
@@ -36,7 +38,9 @@ public class UserBalanceController {
     @RequestMapping("/front/balance/list")
     public String getUserBalanceList(HttpServletRequest request) {
         List<UserBalance> balances = userBalanceService.getBalanceList();
+        UserAccount userAccount = userAccountService.getAccountByUserId(1);
         request.setAttribute("balances", balances);
+        request.setAttribute("userAccount", userAccount);
         return "/user/balance_list";
     }
 

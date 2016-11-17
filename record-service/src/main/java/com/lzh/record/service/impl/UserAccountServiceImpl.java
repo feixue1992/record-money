@@ -33,4 +33,9 @@ public class UserAccountServiceImpl implements UserAccountService {
     public void addUserAccount(UserAccount userAccount) {
         userAccountMapper.addUserAccount(userAccount);
     }
+
+    @Override
+    public UserAccount getAccountByUserId(int userId) {
+        return userAccountMapper.getAccountByUserId(userId);
+    }
 }

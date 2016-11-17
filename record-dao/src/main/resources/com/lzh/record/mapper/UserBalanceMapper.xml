@@ -7,9 +7,10 @@
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
         <result column="content" property="content" jdbcType="VARCHAR"/>
         <result column="balance" property="balance"/>
+        <result column="account_id" property="accountId"/>
     </resultMap>
     <sql id="base_column_list">
-        id, create_time, update_time, content, balance, type
+        id, create_time, update_time, content, balance, type, account_id
     </sql>
     <sql id = "base_property_list">
         #{id},
@@ -17,7 +18,8 @@
         #{updateTime},
         #{content},
         #{balance},
-        #{type}
+        #{type},
+        #{accountId}
     </sql>
     <select id="getBalanceList" resultMap="BaseResultMap">
         select
@@ -41,9 +43,10 @@
         into balance_record(
         balance_record.content,
         balance_record.balance,
-        balance_record.type
+        balance_record.type,
+        balance_record.account_id)
         values (
-        #{content}, #{balance}, #{type}
+        #{content}, #{balance}, #{type},#{accountId}
         )
     </insert>
 

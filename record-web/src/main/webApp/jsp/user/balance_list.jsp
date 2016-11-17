@@ -12,8 +12,12 @@
     <title>资金列表</title>
 </head>
 <body>
-<a href = "/front/balance/to/add">增加记录</a>
-<table cellpadding="1" bgcolor="#7fffd4" border="2">
+<a href = "${pageContext.request.contextPath}/front/balance/to/add">增加记录</a>
+<p><font
+        <c:if test = "${userAccount.balance >= 0}">color = "green" </c:if>
+        <c:if test = "${userAccount.balance < 0}">color = "red" </c:if>
+    >剩余社费 ${userAccount.balance}</font></p>
+<table cellpadding="1">
     <tr align = "center" style = "color : #2aabd2">
         <td style = "width:100px">ID</td>
         <td style = "width:100px">内容</td>
