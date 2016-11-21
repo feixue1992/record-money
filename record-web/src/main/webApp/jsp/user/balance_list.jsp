@@ -20,9 +20,10 @@
 <table cellpadding="1">
     <tr align = "center" style = "color : #2aabd2">
         <td style = "width:100px">ID</td>
-        <td style = "width:100px">内容</td>
+        <td style = "width:500px">内容</td>
         <td style = "width:100px">资金</td>
         <td style = "width:100px">类型</td>
+        <td style = "width:100px">剩余金额</td>
         <td style = "width:300px">创建时间</td>
         <td style = "width:300px">修改时间</td>
         <td style = "width:300px">操作</td>
@@ -36,10 +37,11 @@
                 <c:if test = "${balance.type == 0}">消费</c:if>
                 <c:if test = "${balance.type == 1}">充值</c:if>
             </td>
+            <td>${balance.remainBalance}</td>
             <td><fmt:formatDate value = "${balance.createTime}" pattern="yyyy-MM-dd HH:mm:ss" type = "both"></fmt:formatDate></td>
             <td><fmt:formatDate value = "${balance.updateTime}" pattern="yyyy-MM-dd HH:mm:ss" type = "both"></fmt:formatDate></td>
-            <td><a href = "${pageContext.request.contextPath}/front/to/balance/update/${balance.id}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href = "${pageContext.request.contextPath}/front/balance/delete/${balance.id}">删除</a>
+            <td><a href = "javascript:void(0)" >修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href = "javascript:void(0)" >删除</a>
             </td>
         </tr>
     </c:forEach>

@@ -8,9 +8,10 @@
         <result column="content" property="content" jdbcType="VARCHAR"/>
         <result column="balance" property="balance"/>
         <result column="account_id" property="accountId"/>
+        <result column="remain_balance" property="remainBalance"/>
     </resultMap>
     <sql id="base_column_list">
-        id, create_time, update_time, content, balance, type, account_id
+        id, create_time, update_time, content, balance, type, account_id, remain_balance
     </sql>
     <sql id = "base_property_list">
         #{id},
@@ -19,12 +20,14 @@
         #{content},
         #{balance},
         #{type},
-        #{accountId}
+        #{accountId},
+        #{remainBalance}
     </sql>
     <select id="getBalanceList" resultMap="BaseResultMap">
         select
         <include refid="base_column_list"/>
         from balance_record
+        order by balance_record.id DESC
     </select>
 
     <!--更新账户-->
@@ -44,9 +47,11 @@
         balance_record.content,
         balance_record.balance,
         balance_record.type,
-        balance_record.account_id)
+        balance_record.account_id,
+        balance_record.remain_balance
+        )
         values (
-        #{content}, #{balance}, #{type},#{accountId}
+        #{content}, #{balance}, #{type},#{accountId}, #{remainBalance}
         )
     </insert>
 

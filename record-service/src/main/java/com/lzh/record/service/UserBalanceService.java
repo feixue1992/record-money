@@ -1,5 +1,6 @@
 package com.lzh.record.service;
 
+import com.lzh.record.model.entity.UserAccount;
 import com.lzh.record.model.entity.UserBalance;
 
 import java.util.List;
@@ -12,6 +13,6 @@ public interface UserBalanceService {
 
         void updateBalance(UserBalance userBalance);
 
-        void addBalanceRecord(UserBalance userBalance);
+        void addBalanceRecord(UserBalance userBalance, UserAccount userAccount);
 
 }

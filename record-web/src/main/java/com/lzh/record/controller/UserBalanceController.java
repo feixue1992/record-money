@@ -1,5 +1,6 @@
 package com.lzh.record.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.lzh.record.model.entity.UserAccount;
 import com.lzh.record.model.entity.UserBalance;
 import com.lzh.record.service.UserAccountService;
@@ -37,6 +38,7 @@ public class UserBalanceController {
      */
     @RequestMapping("/front/balance/list")
     public String getUserBalanceList(HttpServletRequest request) {
+        PageHelper.startPage(1, 20); // 核心分页代码
         List<UserBalance> balances = userBalanceService.getBalanceList();
         UserAccount userAccount = userAccountService.getAccountByUserId(1);
         request.setAttribute("balances", balances);
@@ -55,7 +57,8 @@ public class UserBalanceController {
 
     @RequestMapping("/front/balance/add")
     public String balanceAdd(@ModelAttribute("balance") UserBalance userBalance) {
-        userBalanceService.addBalanceRecord(userBalance);
+        UserAccount userAccount = userAccountService.getAccountByUserId(1);
+        userBalanceService.addBalanceRecord(userBalance, userAccount);
         return "redirect:/front/balance/list";
     }
 

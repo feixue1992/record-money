@@ -1,16 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
- 
+
 	<settings>
         <setting name="lazyLoadingEnabled" value="false"/>
         <setting name="cacheEnabled" value="false"/>
 		<setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
-     
+
 	<typeAliases>
 		<!-- 所有用到的实体类无需填写 -->
 	</typeAliases>
+
+	<plugins>
+		<!-- PageHelper4.1.2 -->
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql"/>
+			<property name="offsetAsPageNum" value="true"/>
+			<property name="rowBoundsWithCount" value="true"/>
+			<property name="pageSizeZero" value="true"/>
+			<property name="reasonable" value="true"/>
+			<property name="supportMethodsArguments" value="true"/>
+			<property name="returnPageInfo" value="none"/>
+		</plugin>
+	</plugins>
 
 	<!-- Mapper.xml无需挨个引入，全部命名规范：以Mapper.xml结尾会自动引入  如：publicMapper.xm-->
 	

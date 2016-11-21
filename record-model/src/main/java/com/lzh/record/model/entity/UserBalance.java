@@ -13,4 +13,5 @@ public class UserBalance extends BaseModel{
     private String content;
     private int type;
     private int accountId;
+    private BigDecimal remainBalance;
 }
